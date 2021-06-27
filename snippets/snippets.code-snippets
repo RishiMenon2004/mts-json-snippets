@@ -98,5 +98,52 @@
     "OreDict Material": {
         "prefix": ["\"oredict\"", "material",],
         "body": ["\"oredict:${1:itemID}:${2:quantity}\"$3"]
-    }
+    },
+
+    "Motorized Section": {
+        "prefix": ["motorized", "section"],
+        "body": [
+            "\"motorized\": {",
+                "\t\"isFrontWheelDrive\": ${4|false,true|},",
+                "\t\"isRearWheelDrive\": ${5|false,true|},",
+                "\t\"hasOpenTop\": ${6|false,true|},",
+                "\t\"hasAutopilot\": ${7|false,true|},",
+                "\t\"hasSkidSteer\": ${8|false,true|},",
+                "\t\"emptyMass\": ${9:emptyMass},",
+                "\t\"fuelCapacity\": ${10:fuelCapacity},",
+                "\t\"axleRatio\": ${11|axleRatio,3.5|},",
+                "\t\"dragCoefficient\": ${12|dragCoefficient,0.25|}",
+            "}",
+        ]
+    },
+
+    "Instruments Section": {
+        "prefix": ["instruments", "section"],
+        "body": [
+            "\"instruments\": [",
+                "\t{",
+                    "\t\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
+                    "\t\t\"rot\": [${4:x}, ${5:y}, ${6:z}],",
+                    "\t\t\"scale\": ${7:scale},",
+                    "\t\t\"hudX\": ${8:hudX},",
+                    "\t\t\"hudY\": ${9:hudY},",
+                    "\t\t\"hudScale\": ${0:hudScale}",
+                "\t}",
+            "]"
+        ]
+    },
+
+    "Instruments Entry": {
+        "prefix": ["instrument", "entry"],
+        "body": [
+            "{",
+                "\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
+                "\t\"rot\": [${4:x}, ${5:y}, ${6:z}],",
+                "\t\"scale\": ${7:scale},",
+                "\t\"hudX\": ${8:hudX},",
+                "\t\"hudY\": ${9:hudY},",
+                "\t\"hudScale\": ${0:hudScale}",
+            "}"
+        ]
+    },
 }
