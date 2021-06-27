@@ -184,4 +184,70 @@
             "}"
         ]
     },
+
+    "Collision Section": {
+        "prefix": ["collision", "section"],
+        "body": [
+            "\"collision\": [",
+                "\t{",
+                    "\t\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
+                    "\t\t\"width\": ${4:width},",
+                    "\t\t\"height\": ${5:height},",
+                    "\t\t\"isInterior\": ${6|false,true|},",
+                    "\t\t\"collidesWithLiquids\": ${7|false,true|},",
+                    "\t\t\"armorThickness\": ${8:armorThickness}",
+                "\t}",
+            "]"
+        ]
+    },
+
+    "Collision Entry": {
+        "prefix": ["collision", "entry"],
+        "body": [
+            "{",
+                "\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
+                "\t\"width\": ${4:width},",
+                "\t\"height\": ${5:height},",
+                "\t\"isInterior\": ${6|false,true|},",
+                "\t\"collidesWithLiquids\": ${7|false,true|},",
+                "\t\"armorThickness\": ${8:armorThickness}",
+            "}"
+        ]
+    },
+
+    "Doors Section": {
+        "prefix": ["doors", "section"],
+        "body": [
+            "\"doors\": [",
+                "\t{",
+                    "\t\t\"name\": \"${1:name}\"",
+                    "\t\t\"closedPos\": [${2:x}, ${3:y}, ${4:z}],",
+                    "\t\t\"openPos\": [${5:x}, ${6:y}, ${7:z}],",
+                    "\t\t\"width\": ${8:width},",
+                    "\t\t\"height\": ${9:height},",
+                    "\t\t\"closedByDefault\": ${6|false,true|},",
+                    "\t\t\"closeOnMovement\": ${6|false,true|},",
+                    "\t\t\"activateOnSeated\": ${7|false,true|},",
+                    "\t\t\"ignoresClicks\": ${7|false,true|},",
+                "\t}",
+            "]"
+        ]
+    },
+
+    "Door Entry": {
+        "prefix": ["door", "entry"],
+        "body": [
+            "{",
+                "\t\"name\": \"${1:name}\"",
+                "\t\"closedPos\": [${2:x}, ${3:y}, ${4:z}],",
+                "\t\"openPos\": [${5:x}, ${6:y}, ${7:z}],",
+                "\t\"width\": ${8:width},",
+                "\t\"height\": ${9:height},",
+                "\t\"closedByDefault\": ${6|false,true|},",
+                "\t\"closeOnMovement\": ${6|false,true|},",
+                "\t\"activateOnSeated\": ${7|false,true|},",
+                "\t\"ignoresClicks\": ${7|false,true|},",
+            "}"
+        ]
+    },
 }
