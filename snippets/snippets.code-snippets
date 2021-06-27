@@ -146,4 +146,42 @@
             "}"
         ]
     },
+
+    "Parts Section": {
+        "prefix": ["parts", "section"],
+        "body": [
+            "\"parts\": [",
+                "\t{",
+                    "\t\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
+                    "\t\t\"rot\": [${4:x}, ${5:y}, ${6:z}],",
+                    "\t\t\"turnsWithSteer\": ${7|false,true|},",
+                    "\t\t\"isController\": ${8|false,true|},",
+                    "\t\t\"isPermanent\": ${9|false,true|},",
+                    "\t\t\"isSpare\": ${10|false,true|},",
+                    "\t\t\"types\": [\"${11:type}\"],",
+                    "\t\t\"minValue\": ${12:minValue},",
+                    "\t\t\"maxValue\": ${13:maxValue},",
+                    "\t\t\"linkedDoors\": [${0:doorName}]",
+                "\t}",
+            "]"
+        ]
+    },
+
+    "Part Entry": {
+        "prefix": ["part", "entry"],
+        "body": [
+            "{",
+                "\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
+                "\t\"rot\": [${4:x}, ${5:y}, ${6:z}],",
+                "\t\"turnsWithSteer\": ${7|false,true|},",
+                "\t\"isController\": ${8|false,true|},",
+                "\t\"isPermanent\": ${9|false,true|},",
+                "\t\"isSpare\": ${10|false,true|},",
+                "\t\"types\": [${11:type}],",
+                "\t\"minValue\": ${12:minValue},",
+                "\t\"maxValue\": ${13:maxValue},",
+                "\t\"linkedDoors\": [${0:doorName}]",
+            "}"
+        ]
+    },
 }
