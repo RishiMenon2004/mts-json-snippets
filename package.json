@@ -1,0 +1,24 @@
+{
+    "name": "mts-json-snippets",
+    "displayName": "MTS JSON Snippets",
+    "description": "A collection of snippets to make JSON writing easier for MTS vehicles, parts and other types",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.57.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "json",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "jsonc",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

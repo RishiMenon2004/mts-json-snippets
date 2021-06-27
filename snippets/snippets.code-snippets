@@ -1,0 +1,102 @@
+{
+    "Vehicle Scaffolding": {
+        "prefix": ["car"],
+        "body": [
+            "{",
+                "\t\"definitions\": [",
+                    "",
+                "\t],",
+                "",
+                "\t\"general\": {",
+                    "\t\t\"name\": \"${1:name}\",",
+                    "\t\t\"description\": \"${2:description}\",",
+                    "\t\t\"materials\": [$3$0]",
+                "\t},",
+                "",
+                "\t\"motorized\": {",
+                    "\t\t\"isFrontWheelDrive\": ${4|false,true|},",
+                    "\t\t\"isRearWheelDrive\": ${5|false,true|},",
+                    "\t\t\"hasOpenTop\": ${6|false,true|},",
+                    "\t\t\"hasAutopilot\": ${7|false,true|},",
+                    "\t\t\"hasSkidSteer\": ${8|false,true|},",
+                    "\t\t\"emptyMass\": $9,",
+                    "\t\t\"fuelCapacity\": $10,",
+                    "\t\t\"axleRatio\": ${11:3.5},",
+                    "\t\t\"dragCoefficient\": ${12:0.25}",
+                "\t},",
+                "",
+                "\t\"instruments\": [",
+                    "",
+                "\t],",
+                "",
+                "\t\"parts\": [",
+                    "",
+                "\t],",
+                "",
+                "\t\"collision\": [",
+                    "",
+                "\t],",
+                "",
+                "\t\"doors\": [",
+                    "",
+                "\t],",
+                "",
+                "\t\"rendering\": {",
+                    "",
+                "\t}",
+            "}"
+        ]
+    },
+
+    "General Section": {
+        "prefix": ["general", "section"],
+        "body": [
+            "\"general\": {",
+                "\t\"name\": \"${1:name}\",",
+                "\t\"description\": \"${2:description}\",",
+                "\t\"materials\": [$0]",
+            "}"
+        ]
+    },
+
+    "Definitions Section": {
+        "prefix": ["definitions", "section"],
+        "body": [
+            "\"definitions\": [",
+                "\t{",
+                    "\t\t\"name\": \"${1:name}\",",
+                    "\t\t\"subName\": \"_${2:subName}\",",
+                    "\t\t\"description\": \"${3:description}\",",
+                    "\t\t\"extraMaterials\": [$0]",
+                "\t}",
+            "]"
+        ]
+    },
+
+    "Definition Entry": {
+        "prefix": ["defintion", "entry"],
+        "body": [
+            "{",
+                "\t\"name\": \"${1:name}\",",
+                "\t\"subName\": \"_${2:subName}\",",
+                "\t\"description\": \"${3:description}\",",
+                "\t\"extraMaterials\": [$0]",
+            "}"
+        ]
+    },
+
+    "Minecraft Material": {
+        "prefix": ["\"minecraft\"", "material"],
+        "body": ["\"minecraft:${1:itemID}:${2:variant}:${3:quantity}\"$4"]
+    },
+
+    "MTS Material": {
+        "prefix": ["\"mts\"", "material"],
+        "body": ["\"mts:${1:packID}.${2:itemID}:${3:quantity}\"$4"]
+    },
+
+    "OreDict Material": {
+        "prefix": ["\"oredict\"", "material",],
+        "body": ["\"oredict:${1:itemID}:${2:quantity}\"$3"]
+    }
+}
