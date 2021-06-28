@@ -383,4 +383,19 @@
             "}"
         ]
     },
+
+    "Sound Entry": {
+        "prefix": ["sound", "entry"],
+        "body": [
+            "{",
+                "\t\"name\": \"${1:name}\",",
+                "\t\"activeAnimations\": [${2:animation}],",
+                "\t\"volumeAnimations\": [${3:animation}],",
+                "\t\"pitchAnimations\": [${4:animation}],",
+                "\t\"looping\": ${5|false,true|},",
+                "\t\"isInterior\": ${6|false,true|},",
+                "\t\"isExterior\": ${7|false,true|},",
+            "}"
+        ]
+    },
 }
