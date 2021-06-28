@@ -352,4 +352,35 @@
             "}"
         ]
     },
+
+    "Animated Object Entry": {
+        "prefix": ["animatedObject", "entry"],
+        "body": [
+            "{",
+                "\t\"objectName\": \"${1:objectName}\",",
+                "\t\"applyAfter\": \"${2:applyAfter}\",",
+                "\t\"animations\": [${0:animation}]",
+            "}"
+        ]
+    },
+
+    "Animation Entry": {
+        "prefix": ["animation", "entry"],
+        "body": [
+            "{",
+                "\t\"animationType\": \"${1|animationType,rotation,translation,scaling,visibility,inhibitor,activator|},",
+                "\t\"variable\": \"${2:variable},",
+                "\t\"centerPoint\": [${3:x}, ${4:y}, ${5:z}],",
+                "\t\"axis\": [${6:x}, ${7:y}, ${8:z}],",
+                "\t\"offset\": ${9:offset},",
+                "\t\"clampMin\": ${10:clampMin},",
+                "\t\"clampMax\": ${11:clampMax},",
+                "\t\"absolute\": ${12|false,true|},",
+                "\t\"fowardsEasing\": ${13:forwardsEasing},",
+                "\t\"reverseEasing\": ${14:reverseEasing},",
+                "\t\"fowardsDelay\": ${15:forwardsDelay},",
+                "\t\"reverseDelay\": ${16:reverseDelay}",
+            "}"
+        ]
+    },
 }
