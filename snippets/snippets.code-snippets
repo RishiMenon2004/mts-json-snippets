@@ -54,7 +54,7 @@
             "\"general\": {",
                 "\t\"name\": \"${1:name}\",",
                 "\t\"description\": \"${2:description}\",",
-                "\t\"materials\": [$0]",
+                "\t\"materials\": [${0:material}]",
             "}"
         ]
     },
@@ -67,7 +67,7 @@
                     "\t\t\"name\": \"${1:name}\",",
                     "\t\t\"subName\": \"_${2:subName}\",",
                     "\t\t\"description\": \"${3:description}\",",
-                    "\t\t\"extraMaterials\": [$0]",
+                    "\t\t\"extraMaterials\": [${0:material}]",
                 "\t}",
             "]"
         ]
@@ -80,7 +80,7 @@
                 "\t\"name\": \"${1:name}\",",
                 "\t\"subName\": \"_${2:subName}\",",
                 "\t\"description\": \"${3:description}\",",
-                "\t\"extraMaterials\": [$0]",
+                "\t\"extraMaterials\": [${0:material}]",
             "}"
         ]
     },
@@ -225,10 +225,10 @@
                     "\t\t\"openPos\": [${5:x}, ${6:y}, ${7:z}],",
                     "\t\t\"width\": ${8:width},",
                     "\t\t\"height\": ${9:height},",
-                    "\t\t\"closedByDefault\": ${6|false,true|},",
-                    "\t\t\"closeOnMovement\": ${6|false,true|},",
-                    "\t\t\"activateOnSeated\": ${7|false,true|},",
-                    "\t\t\"ignoresClicks\": ${7|false,true|},",
+                    "\t\t\"closedByDefault\": ${10|false,true|},",
+                    "\t\t\"closeOnMovement\": ${11|false,true|},",
+                    "\t\t\"activateOnSeated\": ${12|false,true|},",
+                    "\t\t\"ignoresClicks\": ${13|false,true|}",
                 "\t}",
             "]"
         ]
@@ -243,10 +243,76 @@
                 "\t\"openPos\": [${5:x}, ${6:y}, ${7:z}],",
                 "\t\"width\": ${8:width},",
                 "\t\"height\": ${9:height},",
-                "\t\"closedByDefault\": ${6|false,true|},",
-                "\t\"closeOnMovement\": ${6|false,true|},",
-                "\t\"activateOnSeated\": ${7|false,true|},",
-                "\t\"ignoresClicks\": ${7|false,true|},",
+                "\t\"closedByDefault\": ${10|false,true|},",
+                "\t\"closeOnMovement\": ${11|false,true|},",
+                "\t\"activateOnSeated\": ${12|false,true|},",
+                "\t\"ignoresClicks\": ${13|false,true|}",
+            "}"
+        ]
+    },
+
+    "Connection Groups Section": {
+        "prefix": ["connectionGroups", "section"],
+        "body": [
+            "\"connectionGroups\": [",
+                "\t{",
+                    "\t\t\"name\": \"${1:name}\"",
+                    "\t\t\"canIntiateConnections\": ${2|false,true|},",
+                    "\t\t\"canIntiateSubConnections\": ${3|false,true|},",
+                    "\t\t\"hookup\": ${4|false,true|},",
+                    "\t\t\"connections\": [${0:connection}]",
+                "\t}",
+            "]"
+        ]
+    },
+
+    "Connection Group Entry": {
+        "prefix": ["connectionGroup", "entry"],
+        "body": [
+            "{",
+                "\t\"name\": \"${1:name}\"",
+                "\t\"canIntiateConnections\": ${2|false,true|},",
+                "\t\"canIntiateSubConnections\": ${3|false,true|},",
+                "\t\"hookup\": ${4|false,true|},",
+                "\t\"connections\": [${0:connection}]",
+            "}"
+        ]
+    },
+
+    "Connection Entry": {
+        "prefix": ["connection", "entry"],
+        "body": [
+            "{",
+                "\t\"type\": \"${1:type}\"",
+                "\t\"pos\": [${2:x}, ${3:y}, ${4:z}],",
+                "\t\"ros\": [${5:x}, ${6:y}, ${7:z}],",
+                "\t\"mounted\": ${6|false,true|},",
+                "\t\"closeOnMovement\": ${6},",
+                "\t\"restricted\": ${7|false,true|}",
+            "}"
+        ]
+    },
+
+    "Effects Section": {
+        "prefix": ["effects", "section"],
+        "body": [
+            "\"effects\": [",
+                "\t{",
+                    "\t\t\"name\": \"${1:name}\",",
+                    "\t\t\"duration\": \"${2:duration}\",",
+                    "\t\t\"amplifier\": \"${0:amplifier}\"",
+                "\t}",
+            "]"
+        ]
+    },
+
+    "Effects Entry": {
+        "prefix": ["effect", "entry"],
+        "body": [
+            "{",
+                "\t\"name\": \"${1:name}\",",
+                "\t\"duration\": \"${2:duration}\",",
+                "\t\"amplifier\": \"${0:amplifier}\"",
             "}"
         ]
     },
