@@ -316,4 +316,40 @@
             "}"
         ]
     },
+
+    "Rendering Section": {
+        "prefix": ["rendering", "section"],
+        "body": [
+            "{",
+                "\t\"textObjects\": [${1:textObject}],",
+                "\t\"animatedObjects\": [${2:animatedObject}],",
+                "\t\"cameraObjects\": [${3:cameraObject}],",
+                "\t\"sounds\": [${4:sound}],",
+                "\t\"particles\": [${5:particle}],",
+                "\t\"customVariables\": [${6:customVariable}],",
+                "\t\"constants\": [${0:constant}]",
+            "}"
+        ]
+    },
+
+    "Text Object Entry": {
+        "prefix": ["textObject", "entry"],
+        "body": [
+            "{",
+                "\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
+                "\t\"rot\": [${4:x}, ${5:y}, ${6:z}],",
+                "\t\"scale\": ${7:scale},",
+                "\t\"fieldName\": \"${8:fieldName}\",",
+                "\t\"defaultText\": \"${9:defaultText}\",",
+                "\t\"maxLength\": ${10:maxLength},",
+                "\t\"color\": \"#${11:color}\",",
+                "\t\"attachedTo\": \"${12:attachedTo}\",",
+                "\t\"lightsUp\": ${13|false,true|},",
+                "\t\"renderPosition\": ${14:renderPosition},",
+                "\t\"colorInherited\": ${15|false,true|},",
+                "\t\"autoScale\": ${16|false,true|},",
+                "\t\"wrapWidth\": ${0:wrapWdith}",
+            "}"
+        ]
+    },
 }
