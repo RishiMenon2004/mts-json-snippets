@@ -220,7 +220,7 @@
         "body": [
             "\"doors\": [",
                 "\t{",
-                    "\t\t\"name\": \"${1:name}\"",
+                    "\t\t\"name\": \"${1:name}\",",
                     "\t\t\"closedPos\": [${2:x}, ${3:y}, ${4:z}],",
                     "\t\t\"openPos\": [${5:x}, ${6:y}, ${7:z}],",
                     "\t\t\"width\": ${8:width},",
@@ -238,7 +238,7 @@
         "prefix": ["door", "entry"],
         "body": [
             "{",
-                "\t\"name\": \"${1:name}\"",
+                "\t\"name\": \"${1:name}\",",
                 "\t\"closedPos\": [${2:x}, ${3:y}, ${4:z}],",
                 "\t\"openPos\": [${5:x}, ${6:y}, ${7:z}],",
                 "\t\"width\": ${8:width},",
@@ -256,7 +256,7 @@
         "body": [
             "\"connectionGroups\": [",
                 "\t{",
-                    "\t\t\"name\": \"${1:name}\"",
+                    "\t\t\"name\": \"${1:name}\",",
                     "\t\t\"canIntiateConnections\": ${2|false,true|},",
                     "\t\t\"canIntiateSubConnections\": ${3|false,true|},",
                     "\t\t\"hookup\": ${4|false,true|},",
@@ -270,7 +270,7 @@
         "prefix": ["connectionGroup", "entry"],
         "body": [
             "{",
-                "\t\"name\": \"${1:name}\"",
+                "\t\"name\": \"${1:name}\",",
                 "\t\"canIntiateConnections\": ${2|false,true|},",
                 "\t\"canIntiateSubConnections\": ${3|false,true|},",
                 "\t\"hookup\": ${4|false,true|},",
@@ -283,7 +283,7 @@
         "prefix": ["connection", "entry"],
         "body": [
             "{",
-                "\t\"type\": \"${1:type}\"",
+                "\t\"type\": \"${1:type}\",",
                 "\t\"pos\": [${2:x}, ${3:y}, ${4:z}],",
                 "\t\"ros\": [${5:x}, ${6:y}, ${7:z}],",
                 "\t\"mounted\": ${6|false,true|},",
@@ -320,7 +320,7 @@
     "Rendering Section": {
         "prefix": ["rendering", "section"],
         "body": [
-            "{",
+            "\"rendering\": {",
                 "\t\"textObjects\": [${1:textObject}],",
                 "\t\"animatedObjects\": [${2:animatedObject}],",
                 "\t\"cameraObjects\": [${3:cameraObject}],",
@@ -368,8 +368,8 @@
         "prefix": ["animation", "entry"],
         "body": [
             "{",
-                "\t\"animationType\": \"${1|animationType,rotation,translation,scaling,visibility,inhibitor,activator|},",
-                "\t\"variable\": \"${2:variable},",
+                "\t\"animationType\": \"${1|animationType,rotation,translation,scaling,visibility,inhibitor,activator|}\",",
+                "\t\"variable\": \"${2:variable}\",",
                 "\t\"centerPoint\": [${3:x}, ${4:y}, ${5:z}],",
                 "\t\"axis\": [${6:x}, ${7:y}, ${8:z}],",
                 "\t\"offset\": ${9:offset},",
@@ -394,7 +394,40 @@
                 "\t\"pitchAnimations\": [${4:animation}],",
                 "\t\"looping\": ${5|false,true|},",
                 "\t\"isInterior\": ${6|false,true|},",
-                "\t\"isExterior\": ${7|false,true|},",
+                "\t\"isExterior\": ${7|false,true|}",
+            "}"
+        ]
+    },
+
+    "Particles Entry": {
+        "prefix": ["particle", "entry"],
+        "body": [
+            "{",
+                "\t\"type\": \"${1|type,smoke,flame,drip,bubble,break|}\",",
+                "\t\"spawnEveryTick\": ${2|false,true|},",
+                "\t\"color\": \"#${3:FFFFFF}\",",
+                "\t\"transparency\": ${4:1},",
+                "\t\"scale\": ${5:1},",
+                "\t\"pos\": [${6:x}, ${7:y}, ${8:z}],",
+                "\t\"initialVelocity\": [${9:x}, ${10:y}, ${11:z}],",
+                "\t\"movementVelocity\": [${12:x}, ${13:y}, ${14:z}],",
+                "\t\"terminalVelocity\": [${15:x}, ${16:y}, ${17:z}],",
+                "\t\"quantity\": ${18:1},",
+                "\t\"duration\": ${19:10},",
+                "\t\"activeAnimations\": [${0:animation}]",
+            "}"
+        ]
+    },
+
+    "Camera Entry": {
+        "prefix": ["camera", "entry"],
+        "body": [
+            "{",
+                "\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
+                "\t\"rot\": [${4:x}, ${5:y}, ${6:z}],",
+                "\t\"fovOverride\": ${7:70},",
+                "\t\"overlay\": \"${8:packID}:${9:path}/${10:textureName}\",",
+                "\t\"animations\": [${0:animation}]",
             "}"
         ]
     },
