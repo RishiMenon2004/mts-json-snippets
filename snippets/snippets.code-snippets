@@ -431,4 +431,53 @@
             "}"
         ]
     },
+
+    "Generic Section": {
+        "prefix": ["generic", "parts", "section"],
+        "body": [
+            "{",
+                "\t\"type\": \"${1|generic,engine,ground,propeller,seat,gun,interactable,effector|}\",",
+                "\t\"customType\": \"$1_$2\",",
+                "\t\"disableMirroring\": ${3|false,true|},",
+                "\t\"useVehicleTexture\": ${4|false,true|},",
+                "\t\"width\": ${5:1},",
+                "\t\"height\": ${6:1},",
+                "\t\"movementAnimations\": [${7:animation}],",
+                "\t\"activeAnimations\": [${0:animation}],",
+            "}"
+        ]
+    },
+
+    "Engine Section": {
+        "prefix": ["engine", "section"],
+        "body": [
+            "{",
+                "\t\"isAutomatic\": ${1|false,true|},",
+                "\t\"starterPower\": ${2:10},",
+                "\t\"fuelConsumption\": ${3:200},",
+                "\t\"fuelType\": \"${4|gasoline,dielse,avgas,redstone|}\",",
+                "\t\"gearRatios\": [${5:-1, 0, 1, 2, 3, 4:], //refer to wiki or search for the specific engine's gear ratios, these are only example values",
+                "\t\"maxRPM\": ${6:120},",
+                "\t\"maxSafeRPM\": ${7:80},",
+                "\t\"idleRPM\": ${8:10}",
+            "}"
+        ]
+    },
+    
+    "Ground Section": {
+        "prefix": ["ground", "device", "section"],
+        "body": [
+            "{",
+                "\t\"isWheel\": ${1|false,true|},",
+                "\t\"isTread\": ${2|false,true|},",
+                "\t\"canFloat\": ${3|false,true|},",
+                "\t\"width\": ${4:1},",
+                "\t\"height\": ${5:1},",
+                "\t\"flatHeight\": ${6:0.5},",
+                "\t\"motiveFriction\": ${7:0.75},",
+                "\t\"lateralFriction\": ${8:0.5}",
+            "}"
+        ]
+    },
+
 }
