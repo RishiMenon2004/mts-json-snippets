@@ -48,7 +48,7 @@
         ]
     },
 
-    //sections and entries
+    //common
 
     "General Section": {
         "prefix": ["general", "section"],
@@ -100,23 +100,6 @@
     "OreDict Material": {
         "prefix": ["\"oredict\"", "material",],
         "body": ["\"oredict:${1:itemID}:${2:quantity}\"$3"]
-    },
-
-    "Motorized Section": {
-        "prefix": ["motorized", "section"],
-        "body": [
-            "\"motorized\": {",
-                "\t\"isFrontWheelDrive\": ${4|false,true|},",
-                "\t\"isRearWheelDrive\": ${5|false,true|},",
-                "\t\"hasOpenTop\": ${6|false,true|},",
-                "\t\"hasAutopilot\": ${7|false,true|},",
-                "\t\"hasSkidSteer\": ${8|false,true|},",
-                "\t\"emptyMass\": ${9:emptyMass},",
-                "\t\"fuelCapacity\": ${10:fuelCapacity},",
-                "\t\"axleRatio\": ${11|axleRatio,3.5|},",
-                "\t\"dragCoefficient\": ${12|dragCoefficient,0.25|}",
-            "}",
-        ]
     },
 
     "Instruments Section": {
@@ -434,13 +417,32 @@
         ]
     },
 
-    //part json specific
+    //vehicle
+
+    "Motorized Section": {
+        "prefix": ["motorized", "section"],
+        "body": [
+            "\"motorized\": {",
+                "\t\"isFrontWheelDrive\": ${4|false,true|},",
+                "\t\"isRearWheelDrive\": ${5|false,true|},",
+                "\t\"hasOpenTop\": ${6|false,true|},",
+                "\t\"hasAutopilot\": ${7|false,true|},",
+                "\t\"hasSkidSteer\": ${8|false,true|},",
+                "\t\"emptyMass\": ${9:emptyMass},",
+                "\t\"fuelCapacity\": ${10:fuelCapacity},",
+                "\t\"axleRatio\": ${11|axleRatio,3.5|},",
+                "\t\"dragCoefficient\": ${12|dragCoefficient,0.25|}",
+            "}",
+        ]
+    },
+
+    //part
 
     "Generic Section": {
         "prefix": ["generic", "parts", "section"],
         "body": [
-            "{",
-                "\t\"type\": \"${1|generic,engine,ground,propeller,seat,gun,interactable,effector|}\",",
+            "\"generic\": {",
+                "\t\"type\": \"${1|part_type,generic,engine,ground,propeller,seat,gun,interactable,effector|}\",",
                 "\t\"customType\": \"$1_$2\",",
                 "\t\"disableMirroring\": ${3|false,true|},",
                 "\t\"useVehicleTexture\": ${4|false,true|},",
@@ -455,11 +457,11 @@
     "Engine Section": {
         "prefix": ["engine", "section"],
         "body": [
-            "{",
+            "\"engine\": {",
                 "\t\"isAutomatic\": ${1|false,true|},",
                 "\t\"starterPower\": ${2:10},",
                 "\t\"fuelConsumption\": ${3:200},",
-                "\t\"fuelType\": \"${4|gasoline,dielse,avgas,redstone|}\",",
+                "\t\"fuelType\": \"${4|fuel_type,gasoline,dielse,avgas,redstone|}\",",
                 "\t\"gearRatios\": [${5:-1, 0, 1, 2, 3, 4:], //refer to wiki or search for the specific engine's gear ratios, these are only example values",
                 "\t\"maxRPM\": ${6:120},",
                 "\t\"maxSafeRPM\": ${7:80},",
@@ -471,7 +473,7 @@
     "Ground Section": {
         "prefix": ["ground", "device", "section"],
         "body": [
-            "{",
+            "\"sound\": {",
                 "\t\"isWheel\": ${1|false,true|},",
                 "\t\"isTread\": ${2|false,true|},",
                 "\t\"canFloat\": ${3|false,true|},",
@@ -487,7 +489,7 @@
     "Seat Section": {
         "prefix": ["seat", "section"],
         "body": [
-            "{",
+            "\"seat\": {",
                 "\t\"standing\": ${1:false,true},",
                 "\t\"widthScale\": ${2:1},",
                 "\t\"heightScale\": ${3:1}",
@@ -498,7 +500,7 @@
     "Gun Section": {
         "prefix": ["gun", "section"],
         "body": [
-            "{",
+            "\"gun\": {",
                 "\t\"autoReload\": ${1|false,true|},",
                 "\t\"isSemiAuto\": ${2|false,true|},",
                 "\t\"fireSolo\": ${3|false,true|},",
@@ -535,8 +537,8 @@
     "Interactable Section": {
         "prefix": ["interactble", "section"],
         "body": [
-            "{",
-                "\t\"interactionType\": \"${1|crate,barrel,crafting_table,furnace,brewing_stand|}\",",
+            "\"interactable\": {",
+                "\t\"interactionType\": \"${1|interactable_type,crate,barrel,crafting_table,furnace,brewing_stand|}\",",
                 "\t\"feedsVehicle\": ${2|false,true|},",
                 "\t\"inventoryUnits\": ${3:9},",
                 "\t\"crafting\": {${0:crafting}}",
@@ -547,8 +549,8 @@
     "Effector Section": {
         "prefix": ["effector", "section"],
         "body": [
-            "{",
-                "\t\"type\": \"${1|fertilizer,harvester,planter,plow,snowplow,drill|}\",",
+            "\"effector\": {",
+                "\t\"type\": \"${1|effector_type,fertilizer,harvester,planter,plow,snowplow,drill|}\",",
                 "\t\"drillHardness\": ${2:1},",
                 "\t\"drillSpeed\": ${4:2},",
                 "\t\"drillDurability\": ${5:100}",
@@ -559,7 +561,7 @@
     "Propeller Section": {
         "prefix": ["propeller", "section"],
         "body": [
-            "{",
+            "\"propeller\": {",
                 "\t\"isRotor\": ${1|false,true|},",
                 "\t\"pitch\": ${2:4},",
                 "\t\"diameter\": ${3:2},",
@@ -573,18 +575,20 @@
         "prefix": ["crafting"],
         "body": [
             "{",
-                "\t\"itemTypes\": [\"${1|vehicles,parts,bullets,instruments,decors,poles,items|}\"],",
-                "\t\"partTypes\": [\"${2|generic_,engine_,ground_,propeller_,seat_,gun_,interactable_,effector_|}\"],",
+                "\t\"itemTypes\": [\"${1|item_type,vehicles,parts,bullets,instruments,decors,poles,items|}\"],",
+                "\t\"partTypes\": [\"${2|part_type,generic_,engine_,ground_,propeller_,seat_,gun_,interactable_,effector_|}\"],",
                 "\t\"items\": [\"${3:packid:item}\"]",
             "}"
         ]
     },
 
+    //bullet
+
     "Bullet Section": {
         "prefix": ["bullet", "section"],
         "body": [
-            "{",
-                "\t\"types\": [\"${1|explosive,incendiary,armor_piercing,water|}\"],",
+            "\"bullet\": {",
+                "\t\"types\": [\"${1|bullet_type,explosive,incendiary,armor_piercing,water|}\"],",
                 "\t\"quantity\": ${2:30},",
                 "\t\"diameter\": ${3:45},",
                 "\t\"caseLength\": ${4:100},",
@@ -601,4 +605,36 @@
             "}"
         ]
     },
+
+    //instrument
+
+    "Components Section": {
+        "prefix": ["components", "section"],
+        "body": [
+            "\"components\": [",
+                "\t${0:component}",
+            "]"
+        ]
+    },
+
+    "Component Entry": {
+        "prefix": ["component", "entry"],
+        "body": [
+            "{",
+                "\t\"xCenter\": ${1:0},",
+                "\t\"yCenter\": ${2:0},",
+                "\t\"scale\": ${3:1},",
+                "\t\"textureXCenter\": $4,",
+                "\t\"textureYCenter\": $5,",
+                "\t\"textureWidth\": ${6:128},",
+                "\t\"textureHeight\": ${7:128},",
+                "\t\"animations\": [${0:animation}],",
+                "\t\"rotateWindow\": ${8|false,true|},",
+                "\t\"extendWindow\": ${9|false,true|},",
+                "\t\"moveComponent\": ${10|false,true|},",
+                "\t\"lightUpTexture\": ${11|false,true|},",
+                "\t\"overlayTexture\": ${12|false,true|}",
+            "}"
+        ]
+    }
 }
