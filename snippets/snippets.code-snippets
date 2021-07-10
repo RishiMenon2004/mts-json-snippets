@@ -447,7 +447,7 @@
                 "\t\"width\": ${5:1},",
                 "\t\"height\": ${6:1},",
                 "\t\"movementAnimations\": [${7:animation}],",
-                "\t\"activeAnimations\": [${0:animation}],",
+                "\t\"activeAnimations\": [${0:animation}]",
             "}"
         ]
     },
@@ -490,7 +490,7 @@
             "{",
                 "\t\"standing\": ${1:false,true},",
                 "\t\"widthScale\": ${2:1},",
-                "\t\"heightScale\": ${3:1},",
+                "\t\"heightScale\": ${3:1}",
             "}"
         ]
     },
@@ -576,6 +576,28 @@
                 "\t\"itemTypes\": [\"${1|vehicles,parts,bullets,instruments,decors,poles,items|}\"],",
                 "\t\"partTypes\": [\"${2|generic_,engine_,ground_,propeller_,seat_,gun_,interactable_,effector_|}\"],",
                 "\t\"items\": [\"${3:packid:item}\"]",
+            "}"
+        ]
+    },
+
+    "Bullet Section": {
+        "prefix": ["bullet", "section"],
+        "body": [
+            "{",
+                "\t\"types\": [\"${1|explosive,incendiary,armor_piercing,water|}\"],",
+                "\t\"quantity\": ${2:30},",
+                "\t\"diameter\": ${3:45},",
+                "\t\"caseLength\": ${4:100},",
+                "\t\"blastStrength\": ${5:1},",
+                "\t\"armorPenetration\": ${6:100},",
+                "\t\"proximityFuze\": ${7:2},",
+                "\t\"airBurstDelay\": ${8:50},",
+                "\t\"slowdownSpeed\": ${9:2},",
+                "\t\"burnTime\": ${10:200},",
+                "\t\"accelerationTime\": ${11:130},",
+                "\t\"maxVelocity\": ${12:420},",
+                "\t\"turnFactor\": ${13:0},",
+                "\t\"angleOfAttack\": ${14:0}",
             "}"
         ]
     },
