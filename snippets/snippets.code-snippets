@@ -568,4 +568,15 @@
             "}"
         ]
     },
+
+    "Crafting Definion": {
+        "prefix": ["crafting"],
+        "body": [
+            "{",
+                "\t\"itemTypes\": [\"${1|vehicles,parts,bullets,instruments,decors,poles,items|}\"],",
+                "\t\"partTypes\": [\"${2|generic_,engine_,ground_,propeller_,seat_,gun_,interactable_,effector_|}\"],",
+                "\t\"items\": [\"${3:packid:item}\"]",
+            "}"
+        ]
+    },
 }
