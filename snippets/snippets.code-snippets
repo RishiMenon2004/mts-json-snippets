@@ -48,6 +48,8 @@
         ]
     },
 
+    //sections and entries
+
     "General Section": {
         "prefix": ["general", "section"],
         "body": [
@@ -432,6 +434,8 @@
         ]
     },
 
+    //part json specific
+
     "Generic Section": {
         "prefix": ["generic", "parts", "section"],
         "body": [
@@ -480,4 +484,88 @@
         ]
     },
 
+    "Seat Section": {
+        "prefix": ["seat", "section"],
+        "body": [
+            "{",
+                "\t\"standing\": ${1:false,true},",
+                "\t\"widthScale\": ${2:1},",
+                "\t\"heightScale\": ${3:1},",
+            "}"
+        ]
+    },
+
+    "Gun Section": {
+        "prefix": ["gun", "section"],
+        "body": [
+            "{",
+                "\t\"autoReload\": ${1|false,true|},",
+                "\t\"isSemiAuto\": ${2|false,true|},",
+                "\t\"fireSolo\": ${3|false,true|},",
+                "\t\"resetPosition\": ${4|false,true|},",
+                "\t\"capacity\": ${5:30},",
+                "\t\"diamater\": ${6:45},",
+                "\t\"length\": ${7:1},",
+                "\t\"minCaseLength\": ${8:100},",
+                "\t\"maxCaseLength\": ${9:150},",
+                "\t\"fireDelay\": ${10:2},",
+                "\t\"reloadTime\": ${11:20},",
+                "\t\"windupTime\": ${12:5},",
+                "\t\"muzzleVelocity\": ${13:120},",
+                "\t\"gravitationalVelocity\": ${14:3},",
+                "\t\"bulletSpreadFactor\": ${15:0},",
+                "\t\"minYaw\": ${16:-200},",
+                "\t\"maxYaw\": ${17:200},",
+                "\t\"minPitch\": ${18:-40},",
+                "\t\"maxPitch\": ${19:60},",
+                "\t\"yawSpeed\": ${20:2},",
+                "\t\"pitchSpeed\": ${21:1},",
+                "\t\"defaultYaw\": ${22:0},",
+                "\t\"defaultPitch\": ${23:-15},",
+                "\t\"handHeld\": ${24|false,true|},",
+                "\t\"handHeldNormalOffset\": [${25:x}, ${26:y}, ${27:z}],",
+                "\t\"handHeldAimedOffset\": [${28:x}, ${29:y}, ${30:z}],",
+                "\t\"muzzlePositions\": [",
+                    "\t\t[${31:x}, ${32:y}, ${33:z}]",
+                "\t]",
+            "}"
+        ]
+    },
+
+    "Interactable Section": {
+        "prefix": ["interactble", "section"],
+        "body": [
+            "{",
+                "\t\"interactionType\": \"${1|crate,barrel,crafting_table,furnace,brewing_stand|}\",",
+                "\t\"feedsVehicle\": ${2|false,true|},",
+                "\t\"inventoryUnits\": ${3:9},",
+                "\t\"crafting\": {${0:crafting}}",
+            "}"
+        ]
+    },
+
+    "Effector Section": {
+        "prefix": ["effector", "section"],
+        "body": [
+            "{",
+                "\t\"type\": \"${1|fertilizer,harvester,planter,plow,snowplow,drill|}\",",
+                "\t\"drillHardness\": ${2:1},",
+                "\t\"drillSpeed\": ${4:2},",
+                "\t\"drillDurability\": ${5:100}",
+            "}"
+        ]
+    },
+
+    "Propeller Section": {
+        "prefix": ["propeller", "section"],
+        "body": [
+            "{",
+                "\t\"isRotor\": ${1|false,true|},",
+                "\t\"pitch\": ${2:4},",
+                "\t\"diameter\": ${3:2},",
+                "\t\"startingHealth\": ${4:100},",
+                "\t\"isDynamicPitch\": ${5|false,true|}",
+            "}"
+        ]
+    },
 }
