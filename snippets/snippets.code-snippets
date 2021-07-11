@@ -1,53 +1,5 @@
 {
-    "Vehicle Scaffolding": {
-        "prefix": ["car"],
-        "body": [
-            "{",
-                "\t\"definitions\": [",
-                    "",
-                "\t],",
-                "",
-                "\t\"general\": {",
-                    "\t\t\"name\": \"${1:name}\",",
-                    "\t\t\"description\": \"${2:description}\",",
-                    "\t\t\"materials\": [$3$0]",
-                "\t},",
-                "",
-                "\t\"motorized\": {",
-                    "\t\t\"isFrontWheelDrive\": ${4|false,true|},",
-                    "\t\t\"isRearWheelDrive\": ${5|false,true|},",
-                    "\t\t\"hasOpenTop\": ${6|false,true|},",
-                    "\t\t\"hasAutopilot\": ${7|false,true|},",
-                    "\t\t\"hasSkidSteer\": ${8|false,true|},",
-                    "\t\t\"emptyMass\": $9,",
-                    "\t\t\"fuelCapacity\": $10,",
-                    "\t\t\"axleRatio\": ${11:3.5},",
-                    "\t\t\"dragCoefficient\": ${12:0.25}",
-                "\t},",
-                "",
-                "\t\"instruments\": [",
-                    "",
-                "\t],",
-                "",
-                "\t\"parts\": [",
-                    "",
-                "\t],",
-                "",
-                "\t\"collision\": [",
-                    "",
-                "\t],",
-                "",
-                "\t\"doors\": [",
-                    "",
-                "\t],",
-                "",
-                "\t\"rendering\": {",
-                    "",
-                "\t}",
-            "}"
-        ]
-    },
-
+    
     //common
 
     "General Section": {
@@ -65,12 +17,7 @@
         "prefix": ["definitions", "section"],
         "body": [
             "\"definitions\": [",
-                "\t{",
-                    "\t\t\"name\": \"${1:name}\",",
-                    "\t\t\"subName\": \"_${2:subName}\",",
-                    "\t\t\"description\": \"${3:description}\",",
-                    "\t\t\"extraMaterials\": [${0:material}]",
-                "\t}",
+                "${0:definiton}",
             "]"
         ]
     },
@@ -106,14 +53,7 @@
         "prefix": ["instruments", "section"],
         "body": [
             "\"instruments\": [",
-                "\t{",
-                    "\t\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
-                    "\t\t\"rot\": [${4:x}, ${5:y}, ${6:z}],",
-                    "\t\t\"scale\": ${7:scale},",
-                    "\t\t\"hudX\": ${8:hudX},",
-                    "\t\t\"hudY\": ${9:hudY},",
-                    "\t\t\"hudScale\": ${0:hudScale}",
-                "\t}",
+                "${0:instrument}",
             "]"
         ]
     },
@@ -136,18 +76,7 @@
         "prefix": ["parts", "section"],
         "body": [
             "\"parts\": [",
-                "\t{",
-                    "\t\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
-                    "\t\t\"rot\": [${4:x}, ${5:y}, ${6:z}],",
-                    "\t\t\"turnsWithSteer\": ${7|false,true|},",
-                    "\t\t\"isController\": ${8|false,true|},",
-                    "\t\t\"isPermanent\": ${9|false,true|},",
-                    "\t\t\"isSpare\": ${10|false,true|},",
-                    "\t\t\"types\": [\"${11:type}\"],",
-                    "\t\t\"minValue\": ${12:minValue},",
-                    "\t\t\"maxValue\": ${13:maxValue},",
-                    "\t\t\"linkedDoors\": [${0:doorName}]",
-                "\t}",
+                "${0:part}",
             "]"
         ]
     },
@@ -174,14 +103,7 @@
         "prefix": ["collision", "section"],
         "body": [
             "\"collision\": [",
-                "\t{",
-                    "\t\t\"pos\": [${1:x}, ${2:y}, ${3:z}],",
-                    "\t\t\"width\": ${4:width},",
-                    "\t\t\"height\": ${5:height},",
-                    "\t\t\"isInterior\": ${6|false,true|},",
-                    "\t\t\"collidesWithLiquids\": ${7|false,true|},",
-                    "\t\t\"armorThickness\": ${8:armorThickness}",
-                "\t}",
+                "${0:collision}",
             "]"
         ]
     },
@@ -204,17 +126,7 @@
         "prefix": ["doors", "section"],
         "body": [
             "\"doors\": [",
-                "\t{",
-                    "\t\t\"name\": \"${1:name}\",",
-                    "\t\t\"closedPos\": [${2:x}, ${3:y}, ${4:z}],",
-                    "\t\t\"openPos\": [${5:x}, ${6:y}, ${7:z}],",
-                    "\t\t\"width\": ${8:width},",
-                    "\t\t\"height\": ${9:height},",
-                    "\t\t\"closedByDefault\": ${10|false,true|},",
-                    "\t\t\"closeOnMovement\": ${11|false,true|},",
-                    "\t\t\"activateOnSeated\": ${12|false,true|},",
-                    "\t\t\"ignoresClicks\": ${13|false,true|}",
-                "\t}",
+                "${0:door}",
             "]"
         ]
     },
@@ -240,13 +152,7 @@
         "prefix": ["connectionGroups", "section"],
         "body": [
             "\"connectionGroups\": [",
-                "\t{",
-                    "\t\t\"name\": \"${1:name}\",",
-                    "\t\t\"canIntiateConnections\": ${2|false,true|},",
-                    "\t\t\"canIntiateSubConnections\": ${3|false,true|},",
-                    "\t\t\"hookup\": ${4|false,true|},",
-                    "\t\t\"connections\": [${0:connection}]",
-                "\t}",
+                "${0:connectionGroup}",
             "]"
         ]
     },
@@ -282,22 +188,18 @@
         "prefix": ["effects", "section"],
         "body": [
             "\"effects\": [",
-                "\t{",
-                    "\t\t\"name\": \"${1:name}\",",
-                    "\t\t\"duration\": \"${2:duration}\",",
-                    "\t\t\"amplifier\": \"${0:amplifier}\"",
-                "\t}",
+                "${0:effect}",
             "]"
         ]
     },
 
-    "Effects Entry": {
+    "Effect Entry": {
         "prefix": ["effect", "entry"],
         "body": [
             "{",
-                "\t\"name\": \"${1:name}\",",
-                "\t\"duration\": \"${2:duration}\",",
-                "\t\"amplifier\": \"${0:amplifier}\"",
+                "\t\"name\": ${1|effect_type,speed,slowness,haste,mining_fatigue,strength,instant_health,instant_damage,jump_boost,nausea,regeneration,resistance,fire_resistance,water_breathing,invisibility,blindness,night_vision,hunger,weakness,poison,wither,health_boost,absorption,stauration,glowing,levitation,luck,unluck|},",
+                "\t\"duration\": ${2:200},",
+                "\t\"amplifier\": ${0:0}",
             "}"
         ]
     },
@@ -361,8 +263,8 @@
                 "\t\"clampMin\": ${10:clampMin},",
                 "\t\"clampMax\": ${11:clampMax},",
                 "\t\"absolute\": ${12|false,true|},",
-                "\t\"fowardsEasing\": ${13:forwardsEasing},",
-                "\t\"reverseEasing\": ${14:reverseEasing},",
+                "\t\"fowardsEasing\": ${13|easing_type,easeinquad,easeincubic,easeinquart,easeinquint,easeincirc,easeinback,easeinelastic,easeinbounce,easeoutquad,easeoutcubic,easeoutquart,easeoutquint,easeoutcirc,easeoutback,easeoutelastic,easeoutbounce,easeinoutquad,easeinoutcubic,easeinoutquart,easeinoutquint,easeinoutcirc,easeinoutback,easeinoutelastic,easeinoutbounce|},",
+                "\t\"reverseEasing\": ${14|easing_type,easeinquad,easeincubic,easeinquart,easeinquint,easeincirc,easeinback,easeinelastic,easeinbounce,easeoutquad,easeoutcubic,easeoutquart,easeoutquint,easeoutcirc,easeoutback,easeoutelastic,easeoutbounce,easeinoutquad,easeinoutcubic,easeinoutquart,easeinoutquint,easeinoutcirc,easeinoutback,easeinoutelastic,easeinoutbounce|},",
                 "\t\"fowardsDelay\": ${15:forwardsDelay},",
                 "\t\"reverseDelay\": ${16:reverseDelay}",
             "}"
@@ -636,5 +538,94 @@
                 "\t\"overlayTexture\": ${12|false,true|}",
             "}"
         ]
-    }
+    },
+
+    //decor
+
+    "Decor Section": {
+        "prefix": ["decor", "section"],
+        "body": [
+            "\"decor\": {",
+                "\t\"type\": ${1|decor_type,chest,beacon,signal_controller,fluid_loader,fuel_pump,radio|},",
+                "\t\"width\": ${2:1},",
+                "\t\"height\": ${3:1},",
+                "\t\"depth\": ${4:1},",
+                "\t\"inventoryUnits\": ${5:9},",
+                "\t\"crafting\": {${0:crafting}}",
+            "}"
+        ]
+    },
+
+    //pole
+
+    "Pole Section": {
+        "prefix": ["pole", "section"],
+        "body": [
+            "\"pole\": {",
+                "\t\"type\": \"${1|pole_type,core,traffic_signal,street_light,sign|}\",",
+                "\t\"radius\": ${2:0.5},",
+                "\t\"allowsDiagonals\": ${3|false,true|}",
+            "}"
+        ]
+    },
+
+    //custom item
+    
+    "Item Section": {
+        "prefix": ["item", "section"],
+        "body": [
+            "\"item\": {",
+                "\t\"type\": ${1|item_type,booklet,food,fuel_hose,jumper_cables,jumper_pack,key,paint_gun,scanner,ticket,weapon,wrench,y2k_button|}",
+            "}"
+        ]
+    },
+
+    "Booklet Section": {
+        "prefix": ["booklet", "section"],
+        "body": [
+            "\"booklet\": {",
+                "\t\"disableTOC\": ${1|false,true|},",
+                "\t\"textureWidth\": ${2:256},",
+                "\t\"textureHeight\": ${3:512},",
+                "\t\"coverTexture\": \"${4:packid}:${5:texturename}\",",
+                "\t\"titleText\": [${5:textObject}],",
+                "\t\"pages\": [$0:page]",
+            "}"
+        ]
+    },
+
+    "Page Entry": {
+        "prefix": ["Page", "entry"],
+        "body": [
+            "{",
+                "\t\"pageTexture\": \"${1:packid}:${2:textureName}\",",
+                "\t\"title\": \"${3:title}\",",
+                "\t\"pageTexture\": ${0:textObject}",
+            "}"
+        ]
+    },
+
+    "Food Section": {
+        "prefix": ["food", "section"],
+        "body": [
+            "\"food\": {",
+                "\t\"isDrink\": ${1|false,true|},",
+                "\t\"timeToEat\": ${2:20},",
+                "\t\"hungerAmount\": ${3:3},",
+                "\t\"saturationAmount\": ${4:1},",
+                "\t\"effects\": [\"${0:effect}\"]",
+            "}"
+        ]
+    },
+
+    "Weapon Section": {
+        "prefix": ["weapon", "section"],
+        "body": [
+            "\"weapon\": {",
+                "\t\"attackDamage\": ${1:1},",
+                "\t\"attackCooldown\": ${0:10}",
+            "}"
+        ]
+    },
+
 }
