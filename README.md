@@ -2,6 +2,8 @@
 
 A collection of small snippets that will help you speed up writing mts jsons
 
+![Github Last Commit](https://img.shields.io/github/last-commit/RishiMenon2004/mts-json-snippets?style=for-the-badge)   ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/MTSCodeTools.mts-json-snippets.svg?style=for-the-badge)   ![Github Watchers](https://img.shields.io/github/watchers/RishiMenon2004/mts-json-snippets?label=Watch&style=for-the-badge)
+
 ## Features
 
 ### Section Snippets and Entry Snippets:
