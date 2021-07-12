@@ -2,13 +2,13 @@
     "name": "mts-json-snippets",
     "displayName": "MTS JSON Snippets",
     "description": "A collection of snippets to make JSON writing easier for MTS vehicles, parts and other types",
-    "icon": "images/icon.png",
+    "icon": "resources/images/icon.png",
     "publisher": "MTSCodeTools",
     "keywords": ["MTS", "Minecraft", "JSON", "Immersive Vehicles"],
     "homepage": "https://github.com/RishiMenon2004/mts-json-snippets/blob/main/README.md",
     "galleryBanner": {
       "color": "#30384F",
-      "theme": "light"
+      "theme": "dark"
     },
     "version": "1.0.0",
     "engines": {
