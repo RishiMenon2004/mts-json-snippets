@@ -17,13 +17,13 @@
         "prefix": ["definitions", "section"],
         "body": [
             "\"definitions\": [",
-                "${0:definiton}",
+                "${0:definition}",
             "]"
         ]
     },
 
     "Definition Entry": {
-        "prefix": ["defintion", "entry"],
+        "prefix": ["definition", "entry"],
         "body": [
             "{",
                 "\t\"name\": \"${1:name}\",",
@@ -162,8 +162,8 @@
         "body": [
             "{",
                 "\t\"name\": \"${1:name}\",",
-                "\t\"canIntiateConnections\": ${2|false,true|},",
-                "\t\"canIntiateSubConnections\": ${3|false,true|},",
+                "\t\"canInitiateConnections\": ${2|false,true|},",
+                "\t\"canInitiateSubConnections\": ${3|false,true|},",
                 "\t\"hookup\": ${4|false,true|},",
                 "\t\"connections\": [${0:connection}]",
             "}"
@@ -197,7 +197,7 @@
         "prefix": ["effect", "entry"],
         "body": [
             "{",
-                "\t\"name\": ${1|effect_type,speed,slowness,haste,mining_fatigue,strength,instant_health,instant_damage,jump_boost,nausea,regeneration,resistance,fire_resistance,water_breathing,invisibility,blindness,night_vision,hunger,weakness,poison,wither,health_boost,absorption,stauration,glowing,levitation,luck,unluck|},",
+                "\t\"name\": ${1|effect_type,speed,slowness,haste,mining_fatigue,strength,instant_health,instant_damage,jump_boost,nausea,regeneration,resistance,fire_resistance,water_breathing,invisibility,blindness,night_vision,hunger,weakness,poison,wither,health_boost,absorption,saturation,glowing,levitation,luck,unluck|},",
                 "\t\"duration\": ${2:200},",
                 "\t\"amplifier\": ${0:0}",
             "}"
@@ -235,7 +235,7 @@
                 "\t\"renderPosition\": ${14:renderPosition},",
                 "\t\"colorInherited\": ${15|false,true|},",
                 "\t\"autoScale\": ${16|false,true|},",
-                "\t\"wrapWidth\": ${0:wrapWdith}",
+                "\t\"wrapWidth\": ${0:wrapWidth}",
             "}"
         ]
     },
@@ -263,9 +263,9 @@
                 "\t\"clampMin\": ${10:clampMin},",
                 "\t\"clampMax\": ${11:clampMax},",
                 "\t\"absolute\": ${12|false,true|},",
-                "\t\"fowardsEasing\": ${13|easing_type,easeinquad,easeincubic,easeinquart,easeinquint,easeincirc,easeinback,easeinelastic,easeinbounce,easeoutquad,easeoutcubic,easeoutquart,easeoutquint,easeoutcirc,easeoutback,easeoutelastic,easeoutbounce,easeinoutquad,easeinoutcubic,easeinoutquart,easeinoutquint,easeinoutcirc,easeinoutback,easeinoutelastic,easeinoutbounce|},",
+                "\t\"forwardsEasing\": ${13|easing_type,easeinquad,easeincubic,easeinquart,easeinquint,easeincirc,easeinback,easeinelastic,easeinbounce,easeoutquad,easeoutcubic,easeoutquart,easeoutquint,easeoutcirc,easeoutback,easeoutelastic,easeoutbounce,easeinoutquad,easeinoutcubic,easeinoutquart,easeinoutquint,easeinoutcirc,easeinoutback,easeinoutelastic,easeinoutbounce|},",
                 "\t\"reverseEasing\": ${14|easing_type,easeinquad,easeincubic,easeinquart,easeinquint,easeincirc,easeinback,easeinelastic,easeinbounce,easeoutquad,easeoutcubic,easeoutquart,easeoutquint,easeoutcirc,easeoutback,easeoutelastic,easeoutbounce,easeinoutquad,easeinoutcubic,easeinoutquart,easeinoutquint,easeinoutcirc,easeinoutback,easeinoutelastic,easeinoutbounce|},",
-                "\t\"fowardsDelay\": ${15:forwardsDelay},",
+                "\t\"forwardsDelay\": ${15:forwardsDelay},",
                 "\t\"reverseDelay\": ${16:reverseDelay}",
             "}"
         ]
@@ -363,7 +363,7 @@
                 "\t\"isAutomatic\": ${1|false,true|},",
                 "\t\"starterPower\": ${2:10},",
                 "\t\"fuelConsumption\": ${3:200},",
-                "\t\"fuelType\": \"${4|fuel_type,gasoline,dielse,avgas,redstone|}\",",
+                "\t\"fuelType\": \"${4|fuel_type,gasoline,diesel,avgas,redstone|}\",",
                 "\t\"gearRatios\": [${5:-1, 0, 1, 2, 3, 4:], //refer to wiki or search for the specific engine's gear ratios, these are only example values",
                 "\t\"maxRPM\": ${6:120},",
                 "\t\"maxSafeRPM\": ${7:80},",
@@ -408,7 +408,7 @@
                 "\t\"fireSolo\": ${3|false,true|},",
                 "\t\"resetPosition\": ${4|false,true|},",
                 "\t\"capacity\": ${5:30},",
-                "\t\"diamater\": ${6:45},",
+                "\t\"diameter\": ${6:45},",
                 "\t\"length\": ${7:1},",
                 "\t\"minCaseLength\": ${8:100},",
                 "\t\"maxCaseLength\": ${9:150},",
@@ -437,7 +437,7 @@
     },
 
     "Interactable Section": {
-        "prefix": ["interactble", "section"],
+        "prefix": ["interactable", "section"],
         "body": [
             "\"interactable\": {",
                 "\t\"interactionType\": \"${1|interactable_type,crate,barrel,crafting_table,furnace,brewing_stand|}\",",
@@ -473,7 +473,7 @@
         ]
     },
 
-    "Crafting Definion": {
+    "Crafting Definition": {
         "prefix": ["crafting"],
         "body": [
             "{",
